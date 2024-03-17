@@ -1,0 +1,295 @@
+/* styles.css */
+
+/* Réinitialisation des styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* En-tête */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+/* Section Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.image-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden; /* Cacher le débordement */
+  }
+  
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%; /* Ratio d'aspect 16:9 */
+    overflow: hidden;
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+  }
+  
+  .text-mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: blend 4s infinite alternate;
+  }
+  
+  @keyframes blend {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+  }
+
+.layer-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  margin-top: 2rem;
+}
+
+/* Galerie */
+
+.gallery {
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+/* Formulaire de contact */
+.contact {
+  padding: 2rem;
+  background-color: #333;
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #f4f4f4;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Pied de page */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-links a {
+  margin-right: 1rem;
+}
+
+
+
+/*ELECTROCARDOGRAME*/
+.ECG {
+  width: auto;
+  height: 200px;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+.line {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: relative;
+}
+
+.point {
+  width: 20px;
+  height: 20px;
+  background-color: #0f0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  animation: movePoint 2s linear infinite, beat 0.15s linear infinite alternate;
+}
+
+@keyframes movePoint {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 20px);
+  }
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(calc(-50% - 10px));
+  }
+}
+
+.point::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: #0f0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  animation: trail 2s linear infinite; /* Réduire la durée pour un effet de vitesse */
+}
+
+@keyframes trail {
+  0% {
+    left: 100%;
+    opacity: 0.5;
+  }
+  60% {
+    left: -200%; /* Augmenter la vitesse */
+    opacity: 0.8; /* Augmenter l'opacité pour un effet plus prononcé */
+  }
+  100% {
+    left: -400%;
+    opacity: 0;
+  }
+}
+
+.point::after:nth-child(1) {
+  animation-delay: 0.01s;
+}
+
+.point::after:nth-child(2) {
+  animation-delay: 0.02s;
+}
+
+/* Ajoutez des règles pour chaque mini-boule de la traînée ici */
