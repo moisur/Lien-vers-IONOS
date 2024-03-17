@@ -1,6 +1,16 @@
 /* styles.css */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur les grands écrans */
+  gap: 20px;
+}
 
-/* Réinitialisation  des styles */
+@media (max-width: 767px) {
+  .image-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+  }
+}
+/* Réinitialisation des styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,75 +45,36 @@ nav li {
 }
 
 /* Section Hero */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  background-color: #f4f4f4;
-  text-align: center;
+.double-exposure {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .image-container {
-    position: relative;
-    width: 80%;
-    max-width: 800px;
-    overflow: hidden; /* Cacher le débordement */
-  }
-  
-  .image-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 60%; /* Ratio d'aspect 16:9 */
-    overflow: hidden;
-  }
-  
-  .hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.5);
-  }
-  
-  .text-mask {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10vw;
-    font-weight: bold;
-    color: transparent;
-    -webkit-text-stroke: 2px white;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    animation: blend 4s infinite alternate;
-  }
-  
-  @keyframes blend {
-    0% {
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-      text-shadow: 0 0 20px rgba(255, 255, 255, 1);
-    }
-  }
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
-.layer-mask {
+.exposed-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mask-layer {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5rem;
+  font-size: 70vw;
   font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-  margin-top: 2rem;
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Masquer la couleur du texte */
+  -webkit-text-stroke-width: 10px; /* Épaisseur du contour du texte */
+  -webkit-text-stroke-color: white; /* Couleur du contour du texte */
 }
 
 /* Galerie */
@@ -215,7 +186,7 @@ footer {
 /*ELECTROCARDOGRAME*/
 .ECG {
   width: auto;
-  height: 200px;
+  height: 100px;
   background-color: #000;
   overflow: hidden;
   position: relative;
@@ -231,7 +202,7 @@ footer {
 .point {
   width: 20px;
   height: 20px;
-  background-color: #0f0;
+  background-color: #fffc59;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -260,7 +231,7 @@ footer {
   content: "";
   width: 4px;
   height: 4px;
-  background-color: #0f0;
+  background-color: #ffd309;
   border-radius: 50%;
   position: absolute;
   top: 50%;
