@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Web Feu</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="ECG">
+    <div class="line">
+      <div class="point"></div>
+    </div>
+  </div>
+  <main>
+    <section class="hero">
+        <div class="image-container">
+          <img src="C:\Code  -  Dev\Twitter Tracking System\FTS\Essau=is\assets\image1.jpg" alt="Fire Double Exposure" class="hero-image">
+          <div class="text-mask">
+            <span class="letter">J</span>
+            <span class="letter">C</span>
+          </div>
+        </div>
+        <div class="hero-content">
+          <h1>Bienvenue sur notre site web</h1>
+          <p>Découvrez notre contenu époustouflant sur le feu.</p>
+        </div>
+      </section>
+
+    <section class="gallery" id="gallery">
+      <h2>Galerie</h2>
+      <div class="image-grid">
+        <div class="image-container">
+          <img src="C:\Code  -  Dev\Twitter Tracking System\FTS\Essau=is\assets\image1.jpg" alt="Image 1">
+          <div class="overlay">
+            <p>Le feu tu ne peux pas test</p>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="C:\Code  -  Dev\Twitter Tracking System\FTS\Essau=is\assets\image2.jpg" alt="Image 2">
+          <div class="overlay">
+            <p>Le feu c'est la vie</p>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="C:\Code  -  Dev\Twitter Tracking System\FTS\Essau=is\assets\image3.jpg" alt="Image 3">
+          <div class="overlay">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae facilis magni error accusantium laudantium delectus? Id officiis sapiente fuga nam iusto ipsa, perspiciatis deleniti optio facere animi hic esse qui.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contactez-nous</h2>
+      <form id="contact-form">
+        <div>
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">Conditions d'utilisation</a>
+    </div>
+    <p>&copy; 2023 Site Web Feu. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
