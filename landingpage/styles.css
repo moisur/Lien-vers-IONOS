@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur les grands écrans */
   gap: 20px;
-}
+} 
 
 @media (max-width: 767px) {
   .image-grid {
