@@ -1,85 +1,399 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Web Feu</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#gallery">Galerie</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+/* styles.css */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur les grands écrans */
+  gap: 20px;
+}
 
-  <div class="ECG">
-    <div class="line">
-      <div class="point"></div>
-    </div>
-  </div>
-  <main>
-    <section class="double-exposure">
-      <div class="mask-layer">JC</div>
-      <img src=image1.jpg alt="Double Exposure" class="exposed-image">
-    </section>
+@media (max-width: 767px) {
+  .image-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+  }
+}
+/* Réinitialisation des styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    <section class="gallery" id="gallery">
-      <h2>Galerie</h2>
-      <div class="image-grid">
-        <div class="image-container">
-          <img src=image1.jpg alt="Image 1">
-          <div class="overlay">
-            <p>Le feu tu ne peux pas test</p>
-          </div>
-        </div>
-        <div class="image-container">
-          <img src=image2.jpg alt="Image 2">
-          <div class="overlay">
-            <p>Le feu c'est la vie</p>
-          </div>
-        </div>
-        <div class="image-container">
-          <img src=image3.jpg alt="Image 3">
-          <div class="overlay">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae facilis magni error accusantium laudantium delectus? Id officiis sapiente fuga nam iusto ipsa, perspiciatis deleniti optio facere animi hic esse qui.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
 
-    <section class="contact" id="contact">
-      <h2>Contactez-nous</h2>
-      <form id="contact-form">
-        <div>
-          <label for="name">Nom :</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-          <label for="email">Email :</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-          <label for="message">Message :</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-  </main>
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  <footer>
-    <div class="footer-links">
-      <a href="#">Mentions légales</a>
-      <a href="#">Politique de confidentialité</a>
-      <a href="#">Conditions d'utilisation</a>
-    </div>
-    <p>&copy; 2023 Site Web Feu. Tous droits réservés.</p>
-  </footer>
-</body>
-</html>
+/* En-tête */
+header {
+  background-color: #000000;
+  color: #fff;
+  top: 0.5 em;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a {
+  display: inline-block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, font-weight 0.3s ease, font-size 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffd309, #ff7a00, #ff4d00, #ff0000);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -1;
+}
+
+nav a:hover {
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Animation depuis la gauche */
+nav a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+nav a::before {
+  transform: translateX(-100%);
+}
+
+/* Animation depuis la droite */
+nav li:nth-child(even) a::before {
+  transform: translateX(100%);
+}
+
+nav li:nth-child(even) a:hover::before {
+  transform: translateX(0);
+}
+
+/* Animation depuis le haut */
+nav li:nth-child(3n+1) a::before {
+  transform: translateY(-100%);
+}
+
+nav li:nth-child(3n+1) a:hover::before {
+  transform: translateY(0);
+}
+
+/* Animation depuis le bas */
+nav li:nth-child(3n+2) a::before {
+  transform: translateY(100%);
+}
+
+nav li:nth-child(3n+2) a:hover::before {
+  transform: translateY(0);
+}
+
+/* Section Hero */
+.double-exposure {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.exposed-image {
+  width: 100%;
+  height: 100%;
+  border-radius: ;
+  object-fit: cover;
+  border-bottom-left-radius: 100px; /* Arrondir le coin inférieur gauche */
+  border-bottom-right-radius: 100px; /* Arrondir le coin inférieur droit */
+
+}
+
+.mask-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Masquer la couleur du texte */
+  -webkit-text-stroke-width: 5px; /* Épaisseur du contour du texte */
+  -webkit-text-stroke-color: white; /* Couleur du contour du texte */
+}
+
+/* Galerie */
+
+.gallery {
+  margin-top: 50px;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  border-bottom-left-radius: 100px; /* Arrondir le coin inférieur gauche */
+  border-bottom-right-radius: 100px; /* Arrondir le coin inférieur droit */
+
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+/* Formulaire de contact */
+.contact {
+  padding: 2rem;
+  background-color: #333;
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #f4f4f4;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Pied de page */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-bottom-left-radius: 100px; /* Arrondir le coin inférieur gauche */
+  border-bottom-right-radius: 100px; /* Arrondir le coin inférieur droit */
+}
+
+.footer-links a {
+  margin-right: 1rem;
+}
+
+
+
+/*ELECTROCARDOGRAME*/
+.ECG {
+  width: auto;
+  height: 100px;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+  border-bottom-left-radius: 100px; /* Arrondir le coin inférieur gauche */
+  border-bottom-right-radius: 100px; /* Arrondir le coin inférieur droit */
+
+}
+
+.line {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: relative;
+}
+
+.point {
+  width: 20px;
+  height: 20px;
+  background-color: #fffc59;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  animation: movePoint 2s linear infinite, beat 0.15s linear infinite alternate;
+}
+
+@keyframes movePoint {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 20px);
+  }
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(calc(-50% - 10px));
+  }
+}
+
+.point::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: #ffd309;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  animation: trail 2s linear infinite; /* Réduire la durée pour un effet de vitesse */
+}
+
+@keyframes trail {
+  0% {
+    left: 100%;
+    opacity: 0.5;
+  }
+  60% {
+    left: -200%; /* Augmenter la vitesse */
+    opacity: 0.8; /* Augmenter l'opacité pour un effet plus prononcé */
+  }
+  100% {
+    left: -400%;
+    opacity: 0;
+  }
+}
+
+.point::after:nth-child(1) {
+  animation-delay: 0.01s;
+}
+
+.point::after:nth-child(2) {
+  animation-delay: 0.02s;
+}
+
+/*SUPER BOUTON*/
+
+   .awesome-button {
+      height: 66px;
+      width: 200px;
+      position: relative;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0 20px 135px rgba(0, 0, 0, 0.8);
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #000000;
+    }
+
+    .awesome-button:before {
+      content: "";
+      background-image: conic-gradient(#fffc59 20deg, transparent 120deg);
+      height: 600%;
+      width: 230%;
+      position: absolute;
+      left: -70%;
+      top: -200%;
+      animation: rotate 4s infinite linear;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+
+    .awesome-button:after {
+      content: "Cliquez ici";
+      height: 94%;
+      width: 94%;
+      position: absolute;
+      background-color: #000000;
+      border-radius: 25px;
+      top: 3%;
+      left: 3%;
+      color: #fffc59;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      letter-spacing: 6px;
+    }
