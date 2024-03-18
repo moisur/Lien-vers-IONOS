@@ -397,3 +397,37 @@ footer {
       font-size: 22px;
       letter-spacing: 6px;
     }
+
+
+.bouton-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+
+}
+
+.bouton{
+    position: relative;
+    text-align: center;
+    width: 400px;
+    padding: 40px;
+    font-size: 35px;
+    color: #fffc59;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    border: 5px solid #fffc59;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 1.5s;
+}
+
+.bouton:hover{
+    box-shadow: 0 5px 50px 0 #fffc59 inset, 0 5px 50px 0 #fffc59,
+    0 5px 50px 0 #fffc59 inset, 0 5px 50px 0 #fffc59;
+    text-shadow: 0 0 5px #fffc59,  0 0 5px #fffc59;
+}
+
