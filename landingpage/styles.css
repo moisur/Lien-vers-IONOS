@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur les grands écrans */
   gap: 20px;
-} 
+}
 
 @media (max-width: 767px) {
   .image-grid {
@@ -30,22 +30,94 @@ a {
 
 /* En-tête */
 header {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
-  padding: 1rem;
+  top: 0.5 em;
 }
 
 nav ul {
   list-style-type: none;
   display: flex;
+  justify-content: center;
 }
 
 nav li {
-  margin-right: 1rem;
+  flex: 1;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a {
+  display: inline-block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, font-weight 0.3s ease, font-size 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffd309, #ff7a00, #ff4d00, #ff0000);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -1;
+}
+
+nav a:hover {
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Animation depuis la gauche */
+nav a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+nav a::before {
+  transform: translateX(-100%);
+}
+
+/* Animation depuis la droite */
+nav li:nth-child(even) a::before {
+  transform: translateX(100%);
+}
+
+nav li:nth-child(even) a:hover::before {
+  transform: translateX(0);
+}
+
+/* Animation depuis le haut */
+nav li:nth-child(3n+1) a::before {
+  transform: translateY(-100%);
+}
+
+nav li:nth-child(3n+1) a:hover::before {
+  transform: translateY(0);
+}
+
+/* Animation depuis le bas */
+nav li:nth-child(3n+2) a::before {
+  transform: translateY(100%);
+}
+
+nav li:nth-child(3n+2) a:hover::before {
+  transform: translateY(0);
 }
 
 /* Section Hero */
 .double-exposure {
+  margin-bottom: 50px;
+  margin-top: 50px;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -61,7 +133,11 @@ nav li {
 .exposed-image {
   width: 100%;
   height: 100%;
+  border-radius: ;
   object-fit: cover;
+  border-bottom-left-radius: 100px; /* Arrondir le coin inférieur gauche */
+  border-bottom-right-radius: 100px; /* Arrondir le coin inférieur droit */
+
 }
 
 .mask-layer {
@@ -69,17 +145,18 @@ nav li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 45vw;
+  font-size: 5vw;
   font-weight: bold;
   color: transparent;
   -webkit-text-fill-color: transparent; /* Masquer la couleur du texte */
-  -webkit-text-stroke-width: 10px; /* Épaisseur du contour du texte */
+  -webkit-text-stroke-width: 5px; /* Épaisseur du contour du texte */
   -webkit-text-stroke-color: white; /* Couleur du contour du texte */
 }
 
 /* Galerie */
 
 .gallery {
+  margin-top: 50px;
   padding: 2rem;
   background-color: #f4f4f4;
 }
@@ -99,6 +176,9 @@ nav li {
   width: 100%;
   height: auto;
   transition: transform 0.3s ease;
+  border-bottom-left-radius: 100px; /* Arrondir le coin inférieur gauche */
+  border-bottom-right-radius: 100px; /* Arrondir le coin inférieur droit */
+
 }
 
 .overlay {
@@ -175,6 +255,8 @@ footer {
   color: #fff;
   padding: 1rem;
   text-align: center;
+  border-bottom-left-radius: 100px; /* Arrondir le coin inférieur gauche */
+  border-bottom-right-radius: 100px; /* Arrondir le coin inférieur droit */
 }
 
 .footer-links a {
@@ -190,6 +272,9 @@ footer {
   background-color: #000;
   overflow: hidden;
   position: relative;
+  border-bottom-left-radius: 100px; /* Arrondir le coin inférieur gauche */
+  border-bottom-right-radius: 100px; /* Arrondir le coin inférieur droit */
+
 }
 
 .line {
@@ -263,4 +348,52 @@ footer {
   animation-delay: 0.02s;
 }
 
-/* Ajoutez des règles pour chaque mini-boule de la traînée ici */
+/*SUPER BOUTON*/
+
+   .awesome-button {
+      height: 66px;
+      width: 200px;
+      position: relative;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0 20px 135px rgba(0, 0, 0, 0.8);
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #000000;
+    }
+
+    .awesome-button:before {
+      content: "";
+      background-image: conic-gradient(#fffc59 20deg, transparent 120deg);
+      height: 600%;
+      width: 230%;
+      position: absolute;
+      left: -70%;
+      top: -200%;
+      animation: rotate 4s infinite linear;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+
+    .awesome-button:after {
+      content: "Cliquez ici";
+      height: 94%;
+      width: 94%;
+      position: absolute;
+      background-color: #000000;
+      border-radius: 25px;
+      top: 3%;
+      left: 3%;
+      color: #fffc59;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      letter-spacing: 6px;
+    }
