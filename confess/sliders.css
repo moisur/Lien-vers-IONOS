@@ -1,0 +1,111 @@
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 800
+
+.eczar-<uniquifier> {
+  font-family: "Eczar", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    transition: 0.5s;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body::before {
+    content: "";
+    background-image: url(https://www.confessdecoquins.fr/wp-content/uploads/2023/09/IMG_2013rNBb-1024x683.jpg);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.25);
+    z-index: -1;
+}
+
+main {
+    width: 600px;
+    height: 500px;
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    
+    width: 20%;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.card:hover {
+    width: 80%;
+}
+
+.card .image {
+    border: 5px solid red; /* Ajout de la bordure rouge */
+    border-radius: 25px; /* Arrondir les coins internes */
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card:hover .image {
+    border: 5px solid red; /* Ajout de la bordure rouge */
+    border-radius: 25px; /* Arrondir les coins internes */
+
+    transform: scale(1.2);
+}
+
+.card .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    filter: brightness(0.25);
+    opacity: 0;
+}
+.card:hover .background {
+    opacity: 1;
+}
+
+.card .layer {
+
+    width: 100%;
+    height: 50%;
+    margin-top: -250px;
+    position: relative;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.card .layer .info {
+    width: 260px;
+    position: absolute;
+    bottom: 10px;
+    padding: 20px;
+    opacity: 0;
+}
+.card:hover .layer .info {
+    opacity: 1;
+}
+.info p {
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 5px;
+}
+
