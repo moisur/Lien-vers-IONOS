@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'PhillySans';
-    src: url('phoenix/PhillySans.otf') format('opentype');
+    src: url('PhillySans.otf') format('opentype');
 }
-
  
 body {
     font-family: 'PhillySans', sans-serif;
