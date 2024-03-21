@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'PhillySans';
     src: url('phoenix/PhillySans.otf') format('opentype');
-    /* ou bien src: url('Chemin_vers_votre_police/PhillySans.otf') format('opentype'); */
 }
+
  
 body {
     font-family: 'PhillySans', sans-serif;
