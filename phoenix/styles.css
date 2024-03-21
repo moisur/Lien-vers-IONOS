@@ -3,7 +3,7 @@
     src: url('C:\\Code  -  Dev\\CRYPTOS\\PHOENIX\\Font\\PhillySans.otf') format('opentype');
     /* ou bien src: url('Chemin_vers_votre_police/PhillySans.otf') format('opentype'); */
 }
-
+ 
 body {
     font-family: 'PhillySans', sans-serif;
     background-color: var(--gc);
