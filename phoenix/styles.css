@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'PhillySans';
+    src: url('C:\\Code  -  Dev\\CRYPTOS\\PHOENIX\\Font\\PhillySans.otf') format('opentype');
+    /* ou bien src: url('Chemin_vers_votre_police/PhillySans.otf') format('opentype'); */
+}
+
+body {
+    font-family: 'PhillySans', sans-serif;
+    background-color: var(--gc);
+    /* Si la police ne peut pas être chargée, utilisez une police de secours sans empattement */
+}
+
+:root {
+    --vc: #9f4f95;
+    --vf: #541c55;
+    --jc: #f0d03f;
+    --jf: #da973f;
+    --n: #000000;
+    --gc: #b6b5b5;
+    --gf: #514e4b;
+  }
+
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+/* Styles pour le menu de navigation */
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(182, 181, 181, 0.9); /* Couleur de fond avec une opacité de 0.9 */
+    z-index: 1000;
+    transition: background-color 0.5s ease; /* Transition pour l'effet de fondu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère pour la barre de navigation */
+}
+
+.nav-center {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* Hauteur du menu */
+    width: 66%; /* 66% de la largeur de la barre de navigation */
+
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: var(--n);
+    font-size: 18px;
+}
+
+.social-links {
+    display: flex;
+    margin-left: auto;
+}
+
+.social-links a {
+    color: var(--n); /* Définir la couleur du texte en noir */
+    margin-left: 20px;
+}
+
+/* Styles pour le contenu de la page */
+
+  h1{
+    margin-top: 80px; /* Pour laisser de l'espace en dessous du menu */
+    background-color: var(--gc);
+    color: var(--jc);
+  }
+
+  .max-width-section {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centre la section horizontalement */
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Si vous souhaitez que l'image conserve ses proportions et ne dépasse pas la largeur de la section, vous pouvez omettre cette règle. */
+}
+
+/* FOOTER CLAIM YOUR AIRDOP */
+.footer {
+    font-family: 'PhillySans';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(182, 181, 181, 0.9); /* Couleur de fond avec une opacité de 0.9 */
+    z-index: 1000;
+    transition: background-color 0.5s ease; /* Transition pour l'effet de fondu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère pour la barre de navigation */    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+.claim-button {
+    font-family: 'PhillySans';
+    letter-spacing: 3px;
+    background-color: var(--jc);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.claim-button:hover {
+    background-color: var(--vf);
+}
