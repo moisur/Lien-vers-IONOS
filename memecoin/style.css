@@ -1,216 +1,283 @@
-body, html {
+@font-face {
+    font-family: 'GlitchGoblin'; /* Nom de la police */
+    src: url("GlitchGoblin-2O87v.ttf") format('truetype'); /* Chemin vers le fichier de police */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Variables */
+:root {
+    --primary-color: #00ff00;
+    --secondary-color: #30867b;
+    --accent-color: #bca74c;
+    --text-color: #fff;
+    --heading-font: 'GlitchGoblin';
+    --body-font: 'GlitchGoblin';
+  }
+  
+  /* Reset */
+  body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     background-color: black;
+    color: var(--text-color);
+    font-family: var(--body-font);
   }
-
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+  }
+  
+  /* Navbar */
   .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dégradé de 100% à 0% d'opacité */
-    color: rgb(0, 255, 0);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     text-align: center;
     padding: 10px 0;
     z-index: 200;
-}
-.navbar nav ul {
+  }
+  
+  .navbar ul {
     list-style: none;
     margin: 10px;
     padding: 0;
     display: flex;
-    justify-content: space-between; /* Répartit les éléments uniformément */
-}
-.navbar li {
-    flex: 1; /* Chaque élément prendra un quart de l'espace disponible */
-}
-.navbar a {
+    justify-content: space-between;
+  }
+  
+  .navbar li {
+    flex: 1;
+  }
+  
+  .navbar a {
     text-decoration: none;
-    width: 100%; /* Définissez la largeur initiale sur 100% */
-    box-sizing: border-box; /* Assurez-vous que la largeur inclut les rembourrages et les bordures */
-    color: rgb(0, 255, 0);
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--primary-color);
     padding: 10px 20px;
     border: 2px solid transparent;
     border-radius: 5px;
     transition: all 0.7s ease;
-    display: inline-block; /* Ajoutez cette ligne pour permettre la transition de la largeur */
+    display: inline-block;
     font-weight: bold;
-}
-
-
-.navbar a:hover {
-    background-color: rgb(34, 236, 34);
+  }
+  
+  .navbar a:hover {
+    background-color: var(--primary-color);
     color: black;
     font-size: 110%;
     transition: all 0.7s ease;
-
-}
-
-.video-container {
+  }
+  
+  /* Hero Section */
+  .hero {
     position: relative;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 66vh;
+    height: 100vh;
     overflow: hidden;
-}
-
-video {
-    width: 100%; /* Ajustez la largeur pour remplir l'écran */
-    height: 100%; /* Ajustez la hauteur pour remplir l'écran */
-    object-fit: cover; /* Ajuste la vidéo pour remplir l'espace sans déformation */
+  }
+  
+  /* Bandeau du haut */
+  .top-banner {
     position: absolute;
     top: 0;
     left: 0;
-}
-.text-container {
+    width: 100%;
+    height: 200px; /* Ajustez cette valeur pour modifier la hauteur du bandeau */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Bandeau du bas */
+  .bottom-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Ajustez cette valeur pour modifier la hauteur du bandeau */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Bandeau de gauche */
+  .left-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px; /* Ajustez cette valeur pour modifier la largeur du bandeau */
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Bandeau de droite */
+  .right-banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px; /* Ajustez cette valeur pour modifier la largeur du bandeau */
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  .text-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: rgb(0, 255, 0);
-    font-size: 5vw; /* Taille relative à la largeur de la fenêtre */
+    font-size: 5vw;
     font-weight: bold;
     width: 80%;
-    max-width: 800px; /* Changer la largeur maximale selon vos préférences */
-}
-
-.bandeau {
+    max-width: 800px;
+  }
+  .text-container {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 200px; /* Hauteur de 200 pixels pour le bandeau */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /* Dégradé de 100% à 0% d'opacité */
-    z-index: 150; /* Assurez-vous que le bandeau est au-dessus de la vidéo */
-}
-
-.bandeau::before,
-.bandeau::after {
-    content: "";
-    position: absolute;
-    top: -400%; /* Positionner au-dessus de la vidéo */
-    width: 100px; /* Largeur de 100 pixels pour les côtés gauche et droit */
-    width: 100px; /* Largeur de 100 pixels pour les côtés gauche et droit */
-    height: calc(800%); /* Hauteur suffisamment grande pour couvrir toute la hauteur de la vidéo */
-}
-
-.bandeau::before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dégradé de 100% à 0% d'opacité */
-    left: 0; /* Positionner à gauche */
-}
-.bandeau::after {
-    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dégradé de 100% à 0% d'opacité */
-    right: 0; /* Positionner à droite */
-}
-
-.bandeau::after {
-    right: 0; /* Positionner à droite */
-}
-.generation {
-    font-weight: bold; /* Police en gras */
-    color: #00ff00; /* Couleur verte */
-    background: linear-gradient(to right, #00ff00, #80ff00); /* Dégradé de couleur */
-    -webkit-background-clip: text; /* Clip de fond au texte */
-    background-clip: text; /* Clip de fond au texte */
-    -webkit-text-fill-color: transparent; /* Couleur transparente pour le texte */
-    animation: neon 1.5s ease-in-out infinite alternate; /* Animation néon */
-}
-
-@keyframes neon {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 5vw;
+    font-weight: bold;
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .generation-container {
+    display: inline-block;
+    animation: neon 1.5s ease-in-out infinite alternate;
+  }
+  
+  .generation {
+    font-weight: bold;
+    background: linear-gradient(to right, var(--primary-color), #80ff00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  @keyframes neon {
     from {
-        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; /* Effet de texte au début de l'animation */
-        font-size: 100%; /* Taille de départ */
+      text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
+      transform: scale(1);
     }
     to {
-        text-shadow: 0 0 8px #80ff00, 0 0 12px #80ff00, 0 0 16px #80ff00, 0 0 20px #80ff00; /* Effet de texte à la fin de l'animation */
-        font-size: 110%; /* Taille agrandie */
+      text-shadow: 0 0 8px #80ff00, 0 0 12px #80ff00, 0 0 16px #80ff00, 0 0 20px #80ff00;
+      transform: scale(1.1);
     }
-}
-
-/* Masquer le menu burger sur les grands écrans */
-.menu-icon {
-    display: none;
-}
-
-
-/* Appliquer les styles spécifiques aux petits écrans */
-@media screen and (max-width: 768px) {
-    /* Afficher le menu burger sur les petits écrans */
-    .menu-icon {
-        display: block;
-    }
-
-    /* Masquer le menu nav sur les petits écrans */
-    .navbar nav ul {
-        display: none;
-    }
-
-    /* Appliquer les styles spécifiques au menu burger */
-    .navbar nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-
-    /* Afficher le menu nav en bas de la vidéo */
-    .navbar nav ul.show {
-        display: flex;
-        justify-content: space-around; /* Pour aligner les éléments horizontalement */
-        width: 100%; /* Ajuster la largeur du menu à 100% */
-        position: relative; /* Positionner le menu en bas */
-        bottom: 0; /* Aligner le menu en bas */
-    }
-}
-.image1{
+  }
+  /* Call to Action Section */
+  .cta {
+    background-color: black;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .cta .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+  }
+  
+  .cta .generation {
+    font-size: 24px;
+    color: var(--secondary-color);
+    background-color: var(--accent-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Image Section */
+  .image-section {
     position: relative;
+  }
+  
+  .image-container {
     width: 80%;
     height: auto;
-    margin: 0 auto; /* Pour centrer horizontalement */
-}
-.image1 img {
-    width: 100%; /* Faites en sorte que l'image occupe toute la largeur de son conteneur */
-    height: auto; /* Pour conserver les proportions de l'image */
-    display: block; /* Assurez-vous que l'image est affichée en tant que bloc */
-}
-
-.image1::before,
-.image1::after {
-    content: "";
-    position: absolute;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .image-container img {
     width: 100%;
-    height: 200px; /* Hauteur des côtés */
-    z-index: 10;
-    transition: background-color 0.5s ease; /* Transition de couleur */
-}
-
-.image1::before {
+    height: auto;
+    display: block;
+  }
+  
+  /* Bandeau du haut */
+  .image-top-banner {
+    position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dégradé en haut */
-}
-
-.image1::after {
+    width: 100%;
+    height: 100px; /* Ajustez cette valeur pour modifier la hauteur du bandeau */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Bandeau du bas */
+  .image-bottom-banner {
+    position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dégradé en bas */
-}
-
-
-.image1-left::before {
+    width: 100%;
+    height: 100px; /* Ajustez cette valeur pour modifier la hauteur du bandeau */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Bandeau de gauche */
+  .image-left-banner {
+    position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dégradé à gauche */
-}
-
-
-/*aucuneidée*/
-
-.gallery {
+    width: 100px; /* Ajustez cette valeur pour modifier la largeur du bandeau */
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Bandeau de droite */
+  .image-right-banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px; /* Ajustez cette valeur pour modifier la largeur du bandeau */
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
+  /* Gallery Section */
+  .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -218,21 +285,21 @@ video {
     padding: 20px;
   }
   
-  .image-container {
+  .gallery .image-container {
     position: relative;
     overflow: hidden;
     width: 300px;
     height: 200px;
   }
   
-  .image-container img {
+  .gallery .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
   
-  .image-container:hover img {
+  .gallery .image-container:hover img {
     transform: scale(1.1);
   }
   
@@ -241,9 +308,8 @@ video {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(44, 167, 114, 0.7);
-    color: #fff;
+    height: 100%;  background-color: rgba(0, 255, 0, 0.7); /* Couleur verte avec une opacité de 0.7 */
+    color: var(--text-color);
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
@@ -252,7 +318,7 @@ video {
     align-items: center;
   }
   
-  .image-container:hover .overlay {
+  .gallery .image-container:hover .overlay {
     opacity: 1;
   }
   
@@ -264,39 +330,27 @@ video {
     font-size: 14px;
     text-align: center;
   }
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh; /* Ajustez la hauteur selon vos besoins */
-}
-
-.generation {
-    font-size: 24px;
-    color: #30867b; /* Couleur de texte */
-    background-color: #bca74c; /* Couleur de fond */
-    padding: 20px; /* Marge intérieure */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre portée */
-}
-
-/* Animation avec un léger décalage aléatoire */
-.generation:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.generation:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.generation:nth-child(3) {
-    animation-delay: 0.3s;
-}
-.galerie {
-    display: flex; /* Utiliser flexbox pour centrer horizontalement et verticalement */
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement */
-    width: 100%; /* Ajuster la largeur à 100% */
-    height: 100vh; /* Utiliser la hauteur de la fenêtre */
-}
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+  
+    .navbar nav ul {
+      display: none;
+    }
+  
+    .navbar nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar nav ul.show {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+    }
+  }
