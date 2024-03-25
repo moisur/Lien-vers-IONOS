@@ -1,79 +1,70 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page avec vidéo en arrière-plan</title>
-<!--  <link rel="stylesheet" href="normalize.css"> --> 
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utilisation de la police de caractères</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="#">BuY</a></li>
-                <li><a href="#">tokenOmiks</a></li>
-                <li><a href="#">TEaM</a></li>
-                <li><a href="#">BuY</a></li>
+
+    <nav class="main-nav">
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="BUY">BUY</a></li>
+                <li><a href="tokenaomics">Tokenomics</a></li>
+                <li><a href="Storytelling">Storytelling</a></li>
             </ul>
-            <div class="menu-icon">&#9776;</div> <!-- Icône de menu burger -->
-        </nav>
-    </div>
-    
-    <div class="video-container">
-        <video autoplay muted loop>
-            <source src="video.mp4" type="video/mp4">
-        </video>
-        <div class="text-container">
-            NEXT <span class="generation">GENERATION</span> MEME COIN
+            <ul class="social-links">
+                <li><a href="#">JOIN TELEGRAM</a></li>
+                <li><a href="#">Join Twitter</a></li>
+            </ul>
         </div>
-        <div class="bandeau"></div>
-    </div>
-    <div class="container">
-        <span class="generation">YOU WANT TO BUY THIS SHIT</span>
+    </nav>   
+    <section class="max-width-section">
+        <img src="crystal-1.png" alt="Image responsive" class="responsive-img" id="image">
+    </section>
+    <section class="max-width-section">
+        <h1 class="burn"><span>I WANT TO</span> BURN</h1>
+    </section>
+    <section>
+        <div class="two-column-section">
+            <div class="image-group">
+                <img src="trading4.png" alt="Trading Image 1">
+                <img src="trading1.png" alt="Trading Image 2">
+                <img src="trading2.png" alt="Trading Image 3">
+                <img src="trading3.png" alt="Trading Image 4">
+            </div>
+        </div>
+    </section>    
+    <section>
+        <div>          
+            <video id="video1" controls loop>
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+      
+    <div class="max-width-section">
+        <h1 class="burn">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </h1>
+        <h1 class="burn">Minima rem qui ducimus sequi quia repellat.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ex eligendi cupiditate ipsam quisquam? Delectus at vel rem ducimus officia a hic deserunt fugit recusandae ipsum, est esse quia, earum deleniti cupiditate, repellat veniam eveniet. Aut, ipsum quos officia et distinctio expedita sed, dolor accusantium doloremque voluptas, cumque ut possimus exercitationem. Voluptatibus, doloribus! Beatae, perferendis.</p>
+
     </div>
 
-    <div class="image1">
-        <img src="image1.jpg" type="image1">
-        <div class="bandeau"></div>
-    </div>
-    
-    <div class="container">
-        <span class="generation">YOU WANT TO BUY THIS SHIT</span>
-    </div>
-    <div class="galerie">
-        <div class="gallery">
-            <div class="image-container">
-                <img src="image3.jpg" alt="Image 3">
-                <div class="overlay">
-                    <h2>Gagner de l'argent</h2>
-                    <p>Et vivre au paradis</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="image4.jpg" alt="Image 4">
-                <div class="overlay">
-                    <h2>Gagner de l'argent</h2>
-                    <p>Et mettre maman à l'abri</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="image5.jpg" alt="Image 5">
-                <div class="overlay">
-                    <h2>Gagner de l'argent</h2>
-                    <p>En faisant du rigoli</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="image6.jpg" alt="Image 6">
-                <div class="overlay">
-                    <h2>Gagner de l'argent</h2>
-                    <p>Et BUUUUUUUURN</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script src="script.js"></script>
+
+<footer class="footer">
+    <button class="claim-button">CLAIM YOUR AIRDROP</button>
+</footer>
+<script src="script.js"></script>
+
+<script>
+    function playVideo() {
+        var video = document.getElementById("video1");
+        video.play();
+    }
+</script>
 </body>
 </html>
