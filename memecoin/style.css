@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: black;
   }
 
   .navbar {
@@ -42,6 +43,9 @@ body, html {
 .navbar a:hover {
     background-color: rgb(34, 236, 34);
     color: black;
+    font-size: 110%;
+    transition: all 0.7s ease;
+
 }
 
 .video-container {
@@ -49,7 +53,7 @@ body, html {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 50vh;
+    height: 66vh;
     overflow: hidden;
 }
 
@@ -88,21 +92,24 @@ video {
 .bandeau::after {
     content: "";
     position: absolute;
-    top: -100%; /* Positionner au-dessus de la vidéo */
+    top: -300%; /* Positionner au-dessus de la vidéo */
     width: 100px; /* Largeur de 100 pixels pour les côtés gauche et droit */
     width: 100px; /* Largeur de 100 pixels pour les côtés gauche et droit */
-    height: calc(100% + 200px); /* Hauteur suffisamment grande pour couvrir toute la hauteur de la vidéo */
-    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dégradé de 100% à 0% d'opacité */
+    height: calc(400%); /* Hauteur suffisamment grande pour couvrir toute la hauteur de la vidéo */
 }
 
 .bandeau::before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dégradé de 100% à 0% d'opacité */
     left: 0; /* Positionner à gauche */
+}
+.bandeau::after {
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dégradé de 100% à 0% d'opacité */
+    right: 0; /* Positionner à droite */
 }
 
 .bandeau::after {
     right: 0; /* Positionner à droite */
 }
-
 .generation {
     font-weight: bold; /* Police en gras */
     color: #00ff00; /* Couleur verte */
@@ -123,4 +130,39 @@ video {
         font-size: 110%; /* Taille agrandie */
     }
 }
+
+/* Masquer le menu burger sur les grands écrans */
+.menu-icon {
+    display: none;
+}
+
+
+/* Appliquer les styles spécifiques aux petits écrans */
+@media screen and (max-width: 768px) {
+    /* Afficher le menu burger sur les petits écrans */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Masquer le menu nav sur les petits écrans */
+    .navbar nav ul {
+        display: none;
+    }
+
+    /* Appliquer les styles spécifiques au menu burger */
+    .navbar nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+
+    /* Afficher le menu nav en bas de la vidéo */
+    .navbar nav ul.show {
+        display: flex;
+        justify-content: space-around; /* Pour aligner les éléments horizontalement */
+        width: 100%; /* Ajuster la largeur du menu à 100% */
+        position: relative; /* Positionner le menu en bas */
+        bottom: 0; /* Aligner le menu en bas */
+    }
 }
