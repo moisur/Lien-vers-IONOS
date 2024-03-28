@@ -1,7 +1,7 @@
 /* Importation de la police de caractères */
 @font-face {
     font-family: 'PhillySans';
-    src: url('C:\\Code  -  Dev\\CRYPTOS\\PHOENIX\\Font\\PhillySans.otf') format('opentype');
+    src: url('PhillySans.otf') format('opentype');
   }
   
   /* Styles généraux */
