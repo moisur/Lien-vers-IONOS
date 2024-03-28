@@ -1,7 +1,7 @@
 /* Importation de la police de caractères */
 @font-face {
     font-family: 'PhillySans';
-    src: url('PhillySans.otf') format('opentype');
+    src: url('C:\\Code  -  Dev\\CRYPTOS\\PHOENIX\\Font\\PhillySans.otf') format('opentype');
   }
   
   /* Styles généraux */
@@ -10,7 +10,6 @@
     background-color: var(--n);
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
   }
   
   :root {
@@ -147,7 +146,6 @@
   /* Styles pour le contenu de la page */
   main {
     margin-top: 80px; /* Pour laisser de l'espace en dessous du menu */
-    margin-top: 80px;
   }
   
   /* Styles pour les images responsive */
@@ -240,7 +238,7 @@
   /* Styles pour le texte animé */
   .burn {
     font-family: 'PhillySans', sans-serif;
-    font-size: 12vw;
+    font-size: 8vw;
     text-align: center;
     letter-spacing: 1.1vw;
     position: relative;
@@ -249,7 +247,7 @@
   }
   .soustitre{
     font-family: 'PhillySans', sans-serif;
-    font-size: 2.5em;
+    font-size: 1.5em;
     letter-spacing: 3px;
     text-align: center;
     position: relative;
@@ -258,62 +256,6 @@
     color: var(--gc);
   }
   
-  .static {
-    color: black;
-    border: 2px solid #fff;
-    letter-spacing: 4px;
-    text-shadow: 
-    -1px -1px 0 #fff,  
-     1px -1px 0 #fff,
-    -1px  1px 0 #fff,
-     1px  1px 0 #fff;
-  }
-  
-  .animated {
-    padding-left: 20px;
-    letter-spacing: 14px;
-    font-weight: bold;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text; /* Définition standard de la propriété background-clip */
-    background-image: linear-gradient(to bottom, var(--jc), var(--jf));
-    -webkit-text-fill-color: transparent;
-    animation: neon-burn 1.5s ease-in-out infinite alternate;
-  }
-  
-  @keyframes neon-burn {
-    from {
-      text-shadow: 0 0 2px var(--jc), 0 0 2px var(--jc), 0 0 2px var(--jc);
-      transform: scale(1);
-    }
-    to {
-      text-shadow: 0 0 5px var(--jc), 0 0 5px var(--jc), 0 0 6px var(--jc), 0 0 5px var(--jc);
-      transform: scale(4);
-    }
-  }
-
-  .animatd2 {
-    letter-spacing: 10px;
-    padding-left: 20px;
-    font-weight: bold;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text; /* Définition standard de la propriété background-clip */
-    background-image: linear-gradient(to bottom, var(--vc), var(--vf));
-    -webkit-text-fill-color: transparent;
-    animation: neon-burn2 1.5s ease-in-out infinite alternate;
-  }
-  
-  @keyframes neon-burn2 {
-    from {
-      text-shadow: 0 0 2px var(--vc), 0 0 2px var(--vc), 0 0 2px var(--vc);
-      transform: scale(1);
-    }
-    to {
-      text-shadow: 0 0 5px var(--vc), 0 0 5px var(--vc), 0 0 6px var(--vc), 0 0 5px var(--vc);
-      transform: scale(4);
-    }
-  }
   
   /* Styles pour le pied de page */
   .footer {
@@ -330,6 +272,7 @@
   }
   
   .claim-button {
+    max-width: 80%;
     font-family: 'PhillySans';
     letter-spacing: 3px;
     background-color: var(--jc);
@@ -355,12 +298,15 @@
 /* Styles de la section de la feuille de route */
 .roadmap-container {
   display: flex;
+  background-color: white;
   justify-content: center;
   align-items: stretch; /* Tous les éléments ont la même hauteur */
   flex-wrap: wrap;
   max-width: 100vw;
   margin: 0 auto;
   padding: 40px 20px;
+  flex-direction: column; /* Aligner les éléments en colonnes */
+
 }
 
 .roadmap-item {
@@ -518,16 +464,14 @@
 }
 
 .timeline-section {
-  max-width: 600px; /* Ajustez la largeur maximale selon vos besoins */
-  margin: 0 auto; /* Centre le contenu horizontalement */
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .timeline-item {
   color: white;
   border-top: 2px dashed;
-  border-color: var(--jc) !important;
+  border-color: var(--jf) !important;
   margin: 0;
   padding: 30px;
   counter-increment: section;
@@ -564,27 +508,27 @@
 
 .timeline-item:nth-child(even):before {
   right: 100%;
-  margin-right: -20px;
+  margin-right: -10px;
 }
 
 .timeline-item:nth-child(odd):before {
   left: 100%;
-  margin-left: -20px;
+  margin-left: -10px;
 }
 
 .timeline-item:nth-child(even) {
   border-left: 2px dashed;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  margin-right: 30px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-right: 10px;
   padding-right: 0;
 }
 
 .timeline-item:nth-child(odd) {
   border-right: 2px dashed;
-  border-top-right-radius: 30px;
+  border-top-right-radius: 10px;
   border-bottom-right-radius: 30px;
-  margin-left: 30px;
+  margin-left: 0px;
   padding-left: 0;
 }
 
@@ -598,12 +542,10 @@
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-
 /* Styles responsives */
 @media (max-width: 768px) {
   .timeline-item {
-    margin: 0 !important;
-    padding: 20px !important;
+    padding: 40px !important;
     border-left: none !important;
     border-right: none !important;
   }
@@ -611,24 +553,6 @@
   .timeline-item:before {
     display: none;
   }
-}
-
-.pie-chart-container {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-}
-.slice {
-  transition: fill 0.5s ease;
-}
-.slice:hover {
-  fill-opacity: 0.5;
-}
-
-/* Importation de la police de caractères */
-@font-face {
-  font-family: 'PhillySans';
-  src: url('C:\\Code - Dev\\CRYPTOS\\PHOENIX\\Font\\PhillySans.otf') format('opentype');
 }
 
 
@@ -695,16 +619,19 @@
 .testimonials {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 5px 20px;
   text-align: center;
 }
 
 .testimonials-title {
-  font-size: 5rem;
+  font-size: 7vw;
+  max-width:  80%;
   font-weight: bold;
   color: var(--jc);
-  letter-spacing: 10px;
-  margin-bottom: 40px;
+  letter-spacing: 3vw;
+  margin-bottom: 1vw;
+  text-align: center;
+
 }
 
 .testimonial-container {
@@ -755,7 +682,7 @@
   left: 20px;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--vf);
+  border-bottom: 10px solid var(--jf);
 }
 
 .testimonial-name {
@@ -780,7 +707,7 @@
   position: relative;
   overflow: hidden;
   justify-content: center;
-  max-width: 90vw; /* Use viewport width units */
+  max-width: 100%; /* Use viewport width units */
 }
 
 .tokenomics-title {
@@ -928,12 +855,12 @@ svg {
 }
 
 .timeline-section {
-  max-width: 600px; /* Ajustez la largeur maximale selon vos besoins */
+  max-width: 35vw; /* Ajustez la largeur maximale selon vos besoins */
   margin: 0 auto; /* Centre le contenu horizontalement */
 }
 
 .timeline-item {
-  color: white;
+  color: var(--gf);
   border-top: 2px dashed;
   border-color: var(--jc) !important;
   margin: 0;
@@ -1081,5 +1008,224 @@ svg {
 
   .project-bubble {
     max-width: none;
+  }
+}
+
+
+/*banniere logos*/
+.banner {
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+}
+
+.images {
+  display: flex;
+  animation: scroll 17s linear infinite;
+  gap: 15px; /* Espacement entre les images */
+}
+
+.images img {
+  height: 50px;
+  filter: grayscale(100%);
+  margin: 15px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(110%);
+  }
+  100% {
+    transform: translateX(-210%);
+  }
+}
+
+/* Styles pour la section About Us */
+.about-us {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.about-us__title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--vc);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.about-us__content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-us__text-container {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  letter-spacing: 0.41vw;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-us__text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--gf);
+}
+/* Animation du fond */
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-animation__element {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('fond.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move-random {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(25vw, 25vh);
+  }
+  50% {
+    transform: translate(-25vw, -25vh);
+  }
+  75% {
+    transform: translate(25vw, -25vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes move-random2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(35vw, 55vh);
+  }
+  50% {
+    transform: translate(-95vw, -45vh);
+  }
+  75% {
+    transform: translate(5vw, -5vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes move-random3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(33vw, 33vh);
+  }
+  50% {
+    transform: translate(-33vw, -18vh);
+  }
+  75% {
+    transform: translate(55vw, -35vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.background-animation__element--1 {
+  top: 10%;
+  left: 10%;
+  animation-name: move-random2;
+}
+
+.background-animation__element--2 {
+  top: 30%;
+  left: 70%;
+  animation-name: move-random3;
+  animation-delay: 0.5s;
+}
+
+.background-animation__element--3 {
+  top: 60%;
+  left: 20%;
+  animation-name: move-random;
+  animation-delay: 1s;
+}
+
+.background-animation__element--4 {
+  top: 80%;
+  left: 40%;
+  animation-name: move-random2;
+  animation-delay: 1.2s;
+}
+
+.background-animation__element--5 {
+  top: 20%;
+  left: 60%;
+  animation-name: move-random;
+}
+
+.background-animation__element--6 {
+  top: 50%;
+  left: 10%;
+  animation-name: move-random3;
+  animation-delay: 1.25s;
+}
+
+.background-animation__element--7 {
+  top: 70%;
+  left: 80%;
+  animation-name: move-random;
+}
+
+.background-animation__element--8 {
+  top: 40%;
+  left: 30%;
+  animation-name: move-random3;
+}
+
+.background-animation__element--9 {
+  top: 60%;
+  left: 70%;
+  animation-name: move-random2;
+}
+
+.background-animation__element--10 {
+  top: 90%;
+  left: 20%;
+  animation-name: move-random;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .about-us__title {
+    font-size: 2rem;
+  }
+
+  .about-us__text {
+    font-size: 1rem;
   }
 }
