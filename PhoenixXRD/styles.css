@@ -1,7 +1,7 @@
 /* Importation de la police de caractères */
 @font-face {
     font-family: 'PhillySans';
-    src: url('PhillySans.otf') format('opentype');
+    src: url('C:\\Code  -  Dev\\CRYPTOS\\PHOENIX\\Font\\PhillySans.otf') format('opentype');
   }
   
   /* Styles généraux */
@@ -1046,16 +1046,13 @@ svg {
   padding: 2rem;
   text-align: center;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 90%, black 90%, transparent 100%),
-  linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
-linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
--webkit-mask-size: 100% 100%;
-mask-size: 100% 100%;
--webkit-mask-repeat: no-repeat;
-mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
-
 .about-us__title {
   font-size: 3rem;
   font-weight: bold;
