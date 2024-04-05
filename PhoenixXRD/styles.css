@@ -6,7 +6,7 @@
   
   /* Styles généraux */
   body {
-    font-family: 'PhillySans', sans-serif;
+    font-family: 'PhillySans', sans-serif!important;
     background-color: var(--n);
     margin: 0;
     padding: 0;
@@ -23,129 +23,99 @@
   }
   
   /* Styles pour le menu de navigation */
-.main-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  transition: background-color 0.5s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.nav-center {
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px 20px;
-  display: flex;
-  justify-content: space-around; /* Changer l'alignement pour créer de l'espace */
-  align-items: center;
-}
-
-.nav-links,
-.social-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
-.nav-links li,
-.social-links li {
-  margin: 0 10px; /* Réduire la marge pour un espacement plus petit */
-}
-
-.nav-links a,
-.social-links a {
-  color: var(--n);
-  font-size: 1.5em; /* Réduire la taille de la police */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease; /* Transition pour les effets de survol */
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-}
-
-.nav-links a:hover,
-.social-links a:hover {
-  transform: scale(1.2); /* Effet d'agrandissement au survol */
-}
-
-@media (max-width: 768px) {
+  .main-nav {
+    position: fixed!important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5)!important;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+  }
+  
   .nav-center {
-    flex-direction: column; /* Changer la direction pour empiler les éléments */
-  }
-
-  .nav-links,
-  .social-links {
-    flex-direction: column; /* Changer la direction pour empiler les éléments */
-    margin-top: 20px; /* Ajouter un espace entre les éléments */
-  }
-
-  .nav-links li,
-  .social-links li {
-    flex-direction: column; /* Changer la direction pour empiler les éléments */
-    margin: 10px 0; /* Changer la marge pour un espacement vertical */
-  }
-}
-/* Styles pour le menu burger */
-.menu-toggle {
-  display: none; /* Cacher le bouton de menu burger par défaut */
-}
-
-/* Styles pour le menu burger uniquement sur les petits écrans */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Afficher le bouton de menu burger sur les petits écrans */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-  }
-
-  .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--n);
-    margin: 5px 0;
-  }
-
-  /* Menu burger actif */
-  .menu-active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .menu-active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* Masquer les liens de navigation par défaut sur les petits écrans */
-  .nav-links,
-  .social-links {
-    display: none;
-    flex-direction: column; /* Pour afficher les éléments en colonne */
-    text-align: center; /* Pour centrer le texte */
-  }
-
-  .nav-links li,
-  .social-links li {
-    margin: 10px 0;
-  }
-
-  /* Afficher les liens de navigation lorsque le menu est actif */
-  .menu-active .nav-links,
-  .menu-active .social-links {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 20px;
     display: flex;
+    justify-content: space-around; /* Changer l'alignement pour créer de l'espace */
+    align-items: center;
   }
+  
+  .nav-links,
+  .social-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  .nav-links {
+    background: black;
+    border: none !important;
+    outline: none !important; /* Ajoutez cette ligne si vous voulez supprimer également la bordure lorsqu'un lien est en focus */
+  }
+  .social-links {
+    background: black;
+    }
+
+  .nav-links li,
+  .social-links li {
+    margin: 0 5px; /* Réduire la marge pour un espacement plus petit */
+  }
+  
+  .nav-links a,
+  .social-links a {
+    color: white;
+    font-size: 1.5em; /* Réduire la taille de la police */
+    transition: all 0.3s ease; /* Transition pour les effets de survol */
+    text-decoration: none; /* Ajoutez cette ligne pour supprimer le soulignement */
+  }
+  
+  .nav-links a:hover,
+  .social-links a:hover {
+    background: linear-gradient(to right, var(--jc), var(--jf), var(--jc));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: scale(1.1); /* Effet d'agrandissement au survol */
+  }
+  
+  .nav-links a:hover {
+    background: linear-gradient(to right, var(--jc), var(--jf), var(--jc));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .social-links a:hover {
+    background: linear-gradient(to right, var(--jf), var(--jc), var(--jf));
+    -webkit-background-clip: text;
+    background-clip: text; /* Définir la propriété background-clip */
+    color: transparent;
 }
 
+
+  @media (max-width: 768px) {
+    .nav-center {
+      flex-direction: column; /* Changer la direction pour empiler les éléments */
+    }
+  
+    .nav-links,
+    .social-links {
+      flex-direction: column; /* Changer la direction pour empiler les éléments */
+      margin-top: 20px; /* Ajouter un espace entre les éléments */
+    }
+  
+    .nav-links li,
+    .social-links li {
+      flex-direction: column; /* Changer la direction pour empiler les éléments */
+      margin: 10px 0; /* Changer la marge pour un espacement vertical */
+    }
+  }
+  
 
   /* Styles pour le contenu de la page */
   main {
     margin-top: 80px; /* Pour laisser de l'espace en dessous du menu */
+    margin-bottom: 111px;
   }
   
   /* Styles pour les images responsive */
@@ -166,6 +136,7 @@
   }  
   
   .max-width-section {
+    background-color: black;
     align-items: center;
     max-width: 90vw; /* Use viewport width units */
     margin: 0 auto;
@@ -174,8 +145,11 @@
   }
   
   .max-width-section h1 {
-    color: var(--jc);
-    max-width: 80%;
+
+    background-image: linear-gradient(to left, var(--jf), var(--jc), var(--jf));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;    max-width: 80%;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -189,52 +163,22 @@
     line-height: 1.5;
     margin-top: 20px;
   }
-  
-  .two-column-section {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
+
+  .burntitre {
+    background-image: linear-gradient(to right, var(--jc), var(--jf));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   
-  .image-group {
-    display: flex;
-    animation: scroll 10s linear infinite;
+  .uptitre {
+    background-image: linear-gradient(to right, var(--vc), var(--vf));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .image-group img {
-    width: 50%;
-    height: auto;
-    margin: 5px;
-    box-sizing: border-box;
-    border: 17px solid var(--jc);
-    border-radius: 25px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 1;
-    transition: all 0.3s ease; /* Transition pour les effets de survol */
-  }
-  
-  .image-group img:hover {
-    transform: scale(1.1); /* Effet d'agrandissement au survol */
-    z-index: 2; /* Passer au-dessus des autres images */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Ombre plus prononcée au survol */
-  }
-  
-  .image-group img:last-child {
-    margin-right: 0;
-  }
-  
+ 
   /* Styles pour le texte animé */
   .burn {
     font-family: 'PhillySans', sans-serif;
@@ -243,7 +187,8 @@
     letter-spacing: 1.1vw;
     position: relative;
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+  
   }
   .soustitre{
     font-family: 'PhillySans', sans-serif;
@@ -275,8 +220,8 @@
     max-width: 80%;
     font-family: 'PhillySans';
     letter-spacing: 3px;
-    background-color: var(--jc);
-    color: #fff;
+    background: black; /* Fond noir */
+    color: white; /* Texte blanc */
     border: none;
     padding: 10px 20px;
     font-size: 18px;
@@ -286,279 +231,103 @@
   }
   
   .claim-button:hover {
-    background-color: var(--vc);
+    color: transparent; /* Texte transparent */
+    background-image: linear-gradient(to right, var(--jc), var(--jf), var(--jc)); /* Dégradé de couleurs pour le texte */
+    -webkit-background-clip: text; /* Clipper le dégradé au texte */
+    background-clip: text; /* Clipper le dégradé au texte */
     transform: scale(1.1); /* Effet d'agrandissement au survol */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre au survol */
   }
 
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-
-
-/* Styles de la section de la feuille de route */
-.roadmap-container {
-  display: flex;
-  background-color: white;
-  justify-content: center;
-  align-items: stretch; /* Tous les éléments ont la même hauteur */
-  flex-wrap: wrap;
-  max-width: 100vw;
-  margin: 0 auto;
-  padding: 40px 20px;
-  flex-direction: column; /* Aligner les éléments en colonnes */
-
-}
-
-.roadmap-item {
-  display: flex;
-  flex-direction: column; /* Disposition verticale */
-  align-items: center; /* Centrage horizontal */
-  margin-bottom: 40px;
-  width: 100%;
-}
-
-.roadmap-number {
-  font-size: 36px;
-  letter-spacing: 3px;
-  font-weight: bold;
-  color: var(--jc);
-  text-shadow: 0 0 5px rgba(var(--jf), 0.8);
-  margin-bottom: 10px;
-  line-height: 1;
-}
-
-.roadmap-content {
-  background: linear-gradient(45deg, var(--vf), var(--vc));
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  max-width: 400px;
-  position: relative;
-  overflow: hidden;
-  display: flex; /* Disposition flexible */
-  flex-direction: column; /* Disposition verticale */
-  align-items: center; /* Centrage horizontal */
-}
-
-.roadmap-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, var(--vc), var(--vf));
-  opacity: 0.2;
-  z-index: -1;
-  animation: glowing 5s infinite linear;
-}
-
-.roadmap-logo {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
-  animation: spin 5s ;
-}
-
-.roadmap-title {
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 3px;
-  color: var(--jc);
-  margin-bottom: 10px;
-  text-align: center; /* Centrage du texte */
-}
-
-.roadmap-text {
-  color: white !important; /* Texte en blanc */
-  text-align: center; /* Centrage du texte */
-  letter-spacing: 3px;
-}
-
-.roadmap-arrow {
-  display: none;
-}
-
-/* Animations */
-@keyframes glowing {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Media queries pour la responsivité */
-@media (min-width: 768px) {
-  .roadmap-container {
-    flex-wrap: nowrap;
-    align-items: stretch; /* Tous les éléments ont la même hauteur */
-  }
-
-  .roadmap-item {
-    width: auto;
-    margin-bottom: 0;
-    align-items: center; /* Centrage horizontal */
-  }
-
-  .roadmap-arrow {
-    display: block;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    transform: rotate(90deg);
-    margin: 0 20px;
-  }
-
-  .arrow-line {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, rgba(var(--jc), 0.2), rgba(var(--jc), 0.8), rgba(var(--jc), 0.2));
-    transform: translateY(-50%);
-  }
-
-  .arrow-head {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 20px solid var(--jc);
-    transform: translateY(-50%);
-    animation: arrow-pulse 2s infinite;
-  }
-
-  @keyframes arrow-pulse {
-    0% {
-      transform: translateY(-50%) scale(1);
-    }
-    50% {
-      transform: translateY(-50%) scale(1.2);
-    }
-    100% {
-      transform: translateY(-50%) scale(1);
-    }
-  }
-}
 .max-width-section h2,
 .max-width-section p {
     color: white;
-}
+}/* Styles pour les écrans de petite taille (mobile) */
+@media (max-width: 767px) {
+  .timeline {
+    display: block;
+  }
 
-.timeline-section {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.timeline-item {
-  color: white;
-  border-top: 2px dashed;
-  border-color: var(--jf) !important;
-  margin: 0;
-  padding: 30px;
-  counter-increment: section;
-  position: relative;
-}
-
-.timeline-title {
-  font-size: 1.2rem;
-  letter-spacing: 1vw;
-  font-weight: bold;
-  color: var(--vf);
-  text-shadow: 0 0 5px rgba(var(--jf), 0.5);
-  margin-bottom: 10px;
-}
-
-.timeline p{
-  letter-spacing: 0.5vw;
-  font-size: 1.2rem;
-}
-.timeline-item:nth-child(even):before,
-.timeline-item:nth-child(odd):before {
-  content: counter(section);
-  position: absolute;
-  border-radius: 50%;
-  padding: 10px;
-  height: 20px;
-  width: 20px;
-  background-color: var(--jc);
-  text-align: center;
-  color: white;
-  font-size: 110%;
-  
-}
-
-.timeline-item:nth-child(even):before {
-  right: 100%;
-  margin-right: -10px;
-}
-
-.timeline-item:nth-child(odd):before {
-  left: 100%;
-  margin-left: -10px;
-}
-
-.timeline-item:nth-child(even) {
-  border-left: 2px dashed;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  margin-right: 10px;
-  padding-right: 0;
-}
-
-.timeline-item:nth-child(odd) {
-  border-right: 2px dashed;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 30px;
-  margin-left: 0px;
-  padding-left: 0;
-}
-
-.timeline-item:first-child {
-  border-top: 0;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-
-.timeline-item:last-child {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-/* Styles responsives */
-@media (max-width: 768px) {
   .timeline-item {
-    padding: 40px !important;
-    border-left: none !important;
-    border-right: none !important;
+    padding: 20px;
   }
 
-  .timeline-item:before {
-    display: none;
+  .timeline-item:nth-child(even),
+  .timeline-item:nth-child(odd) {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  .timeline-item:nth-child(even):before,
+  .timeline-item:nth-child(odd):before {
+    left: 0;
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  /* Styles pour les écrans de taille moyenne (tablette) */
+.timeline-title {
+  font-size: 1.2rem; /* Taille de base pour les écrans de bureau */
+  letter-spacing: 1vw; /* Espacement des lettres en fonction de la largeur de la fenêtre */
+}
+
+
+  .timeline p {
+    font-size: 0.9rem;
+    letter-spacing: 0.1vw;
   }
 }
 
 
+@media (max-width: 767px) {
+  .timeline {
+    display: block;
+  }
+
+  .timeline-item {
+    padding: 20px;
+    padding-left: 60px;
+    position: relative;
+  }
+
+  .timeline-item:nth-child(even),
+  .timeline-item:nth-child(odd) {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .timeline-item:nth-child(even):before,
+  .timeline-item:nth-child(odd):before {
+    left: 20px;
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .timeline-title {
+    font-size: 4vw; /* Taille de police relative à la largeur de la fenêtre */
+    letter-spacing: 0.2vw;
+    position: absolute;
+    top: 20px;
+    left: 60px;
+  }
+
+  .timeline p {
+    font-size: 0.9rem;
+    letter-spacing: 0.1vw;
+    margin-top: 30px;
+  }
+}
 
 /* Conteneur de l'équipe */
 .team-container {
+  margin-top: 25px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 2rem;
@@ -735,63 +504,6 @@ svg {
   font-size: 36px;
 }
 
-.airdrop-bubble {
-  position: absolute;
-  top: 85%;
-  left: 90%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border-radius: 50%;
-  width: 27vw;
-  height: 27vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.flames {
-  display: flex;
-  padding-left: 15px;
-  padding-right: 15px;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.flame {  
-  width: 18px;
-  height: 18px;
-  background-image: url('flamme.png');
-  background-size: cover;
-  border-radius: 50%;
-  margin: 0 2px;
-  animation: flicker 3s ease infinite;
-}
-
-.burnt {
-  background-image: url('flammenoire.png');
-  animation: flicker 3s ease infinite;
-}
-
-@keyframes flicker {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(2);
-  }
-  50% {
-    transform: scale(3);
-  }  
-  75% {
-    transform: scale(2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
 .airdrop-text {
   font-size: 1.1rem;
@@ -943,6 +655,9 @@ svg {
 }
 
 .long-term-projects {
+      padding: 20px;
+
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1232,5 +947,58 @@ svg {
 
   .about-us__text {
     font-size: 1rem;
+  }
+}
+
+.timeline-box {
+  margin: 25px auto;
+
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  letter-spacing: 3px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.description-container {
+  max-width: 800px;
+  margin: 15px auto;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--gf);
+  letter-spacing: 0.41vw;
+}
+
+.glow-shadow {
+  text-shadow: 0 0 10px var(--jc), 0 0 20px var(--jc), 0 0 30px var(--jc), 0 0 40px var(--jc);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .timeline-col {
+    width: 100%;
   }
 }
