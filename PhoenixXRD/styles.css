@@ -1,7 +1,7 @@
 /* Importation de la police de caractères */
 @font-face {
     font-family: 'PhillySans';
-    src: url('PhillySans.otf') format('opentype');
+    src: url('C:\\Code  -  Dev\\CRYPTOS\\PHOENIX\\Font\\PhillySans.otf') format('opentype');
   }
   
   /* Styles généraux */
@@ -335,6 +335,7 @@
   margin: 2rem auto;
   padding: 0 1rem;
 }
+
 /* Membre de l'équipe */
 .team-member {
   background-color: black;
@@ -799,6 +800,16 @@ svg {
   line-height: 1.5;
   color: var(--gf);
 }
+
+.about-us__list {
+  margin-right: 20px; /* Ajustez la valeur selon vos besoins */
+
+  list-style-type: none;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--gf);
+}
+
 /* Animation du fond */
 .background-animation {
   position: absolute;
