@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@font-face {
+  font-family: 'PhillySans';
+  src: url('C:\\Code  -  Dev\\CRYPTOS\\PHOENIX\\Font\\PhillySans.otf') format('opentype');
+}
 
 :root {
   --vc: #9f4f95;
@@ -11,9 +14,10 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--vc);
+  font-family: 'PhillySans', sans-serif;
+  background-color: rgb(230, 226, 226);
   color: var(--jc);
+  letter-spacing: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +28,7 @@ body {
 }
 
 .container {
-  background-color: var(--vf);
+  background-color: black;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
@@ -97,6 +101,10 @@ h1 {
 }
 
 button {
+  font-family: 'PhillySans', sans-serif;
+
+  letter-spacing: 3px;
+  font-size:larger;
   background-color: var(--jc);
   color: var(--vf);
   padding: 1rem 2rem;
@@ -113,6 +121,9 @@ button:hover {
 }
 
 button:disabled {
+  font-family: 'PhillySans', sans-serif;
+  letter-spacing: 3px;
+  font-size:larger;
   background-color: var(--gc);
   color: var(--gf);
   cursor: not-allowed;

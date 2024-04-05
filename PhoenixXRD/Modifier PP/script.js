@@ -21,7 +21,7 @@ input.addEventListener('change', () => {
       canvas.style.display = 'none';
       downloadLink.style.display = 'none';
       modifyButton.disabled = false;
-      modifyButton.textContent = 'Modifier l\'image';
+      modifyButton.textContent = 'Update Image';
     }
     uploadedImage.src = reader.result;
   }
