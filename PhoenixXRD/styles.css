@@ -114,7 +114,6 @@
 
   /* Styles pour le contenu de la page */
   main {
-    margin-top: 80px; /* Pour laisser de l'espace en dessous du menu */
     margin-bottom: 111px;
   }
   
@@ -140,7 +139,6 @@
     align-items: center;
     max-width: 90vw; /* Use viewport width units */
     margin: 0 auto;
-    padding: 2rem;
     box-sizing: border-box;
   }
   
@@ -150,7 +148,6 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;    max-width: 80%;
-    padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -196,6 +193,7 @@
     letter-spacing: 3px;
     text-align: center;
     position: relative;
+    padding-bottom: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     color: var(--gc);
@@ -220,24 +218,25 @@
     max-width: 80%;
     font-family: 'PhillySans';
     letter-spacing: 3px;
-    background: black; /* Fond noir */
-    color: white; /* Texte blanc */
+    background: linear-gradient(to right, var(--jc), var(--jf), var(--jc)) !important; /* Dégradé de couleurs pour le fond */
+    -webkit-background-clip: text; /* Clipper le dégradé au texte */
+    background-clip: text; /* Clipper le dégradé au texte */
+    color: black!important; /* Texte noir par défaut */
     border: none;
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease; /* Transition pour les effets de survol */
-  }
-  
-  .claim-button:hover {
-    color: transparent; /* Texte transparent */
-    background-image: linear-gradient(to right, var(--jc), var(--jf), var(--jc)); /* Dégradé de couleurs pour le texte */
-    -webkit-background-clip: text; /* Clipper le dégradé au texte */
-    background-clip: text; /* Clipper le dégradé au texte */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre par défaut */
+}
+
+.claim-button:hover {
+    color: transparent; /* Texte transparent au survol */
+    background: linear-gradient(to right, var(--jf), var(--jc), var(--jf)) !important; /* Dégradé de couleurs pour le fond */
     transform: scale(1.1); /* Effet d'agrandissement au survol */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre au survol */
-  }
+}
 
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
@@ -338,6 +337,7 @@
 
 /* Membre de l'équipe */
 .team-member {
+  max-width: 100%;
   background-color: black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -383,89 +383,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Styles pour la section Testimonials */
-.testimonials {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 5px 20px;
-  text-align: center;
-}
-
-.testimonials-title {
-  font-size: 7vw;
-  max-width:  80%;
-  font-weight: bold;
-  color: var(--jc);
-  letter-spacing: 3vw;
-  margin-bottom: 1vw;
-  text-align: center;
-
-}
-
-.testimonial-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.testimonial-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-  max-width: 400px;
-}
-
-.testimonial-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.rating {
-  margin-bottom: 10px;
-}
-
-.star {
-  color: var(--jc);
-  text-shadow: 0 0 5px var(--jf);
-  font-size: 24px;
-}
-
-.testimonial-bubble {
-  background: linear-gradient(190deg, var(--jf), var(--jc));
-  color: var(--blanc);
-  padding: 20px;
-  border-radius: 10px;
-  position: relative;
-  text-align: left;
-}
-
-.testimonial-bubble::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--jf);
-}
-
-.testimonial-name {
-  font-size: 2rem;
-  letter-spacing: 3px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.testimonial-text {
-  font-size: 1rem;
-  letter-spacing: 2px;
-  line-height: 1.5;
 }
 
 /*tokenomics*/
